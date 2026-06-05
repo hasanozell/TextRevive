@@ -21,6 +21,12 @@ OCR Doğruluk Metriği: EasyOCR motorunun okuma güven skoru (Confidence Score) 
 Dil Modeli Doğruluk Metriği: Transformer mimarisinin [MASK] alanlarına atadığı kelimeler, çıkış katmanındaki (output layer) Softmax fonksiyonundan elde edilen olasılık yüzdeleriyle ölçülür. Düşük güven skorları (%15 altı) arayüzde özel olarak işaretlenerek "Güvenli Yapay Zeka" (Trustworthy AI) prensibi sağlanır.
 
  Kurulum ve Çalıştırma
+
+ ⚠️ Önemli Not (Model Dosyaları):
+GitHub'ın 100 MB dosya sınırı nedeniyle, eğitilmiş yapay zeka modelleri (textrevive_tam_model ve textrevive_tr_model) repoya yüklenememiştir. Projeyi çalıştırmadan önce lütfen modelleri indirin ve projenin ana dizinine klasör olarak çıkartın.
+Model 1: https://drive.google.com/file/d/1gbNDPr3lS8Y4ahv8gjPiBD-Q4lZi0FKi/view?usp=sharing
+Model 2: https://drive.google.com/file/d/15fJS2j-juLxgqw2TTdjM7tkWdcw_RCgx/view?usp=sharing
+
 1. Gereksinimleri Yükleyin:
 Projeyi klonladıktan sonra terminal veya komut satırınızda dizin içerisine girerek şu komutu çalıştırın:
 pip install -r requirements.txt
