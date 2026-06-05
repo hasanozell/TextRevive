@@ -51,9 +51,13 @@ if uploaded_file is not None:
         img_array = np.array(image)
         ocr_results = reader.readtext(img_array)
         
+        
+        ocr_results.sort(key=lambda r: (int(r[0][0][1]/15), r[0][0][0]))
+        
         olusturulan_metin = []
         for (bbox, text, prob) in ocr_results:
-            if prob < 0.50 or re.search(r'[^a-zA-ZğüşıöçĞÜŞİÖÇ\s.,]', text):
+            
+            if prob < 0.50 or re.search(r'[^a-zA-ZğüşıöçĞÜŞİÖÇ\s.,\'\-]', text):
                 olusturulan_metin.append("[MASK]")
             else:
                 olusturulan_metin.append(text)
