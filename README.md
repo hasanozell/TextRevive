@@ -24,6 +24,7 @@ Dil Modeli Doğruluk Metriği: Transformer mimarisinin [MASK] alanlarına atadı
 
  ⚠️ Önemli Not (Model Dosyaları):
 GitHub'ın 100 MB dosya sınırı nedeniyle, eğitilmiş yapay zeka modelleri (textrevive_tam_model ve textrevive_tr_model) repoya yüklenememiştir. Projeyi çalıştırmadan önce lütfen modelleri indirin ve projenin ana dizinine klasör olarak çıkartın.
+
 Model 1: https://drive.google.com/file/d/1gbNDPr3lS8Y4ahv8gjPiBD-Q4lZi0FKi/view?usp=sharing
 
 Model 2: https://drive.google.com/file/d/15fJS2j-juLxgqw2TTdjM7tkWdcw_RCgx/view?usp=sharing
