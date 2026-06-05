@@ -1,0 +1,8 @@
+İndirilmesi Gereken Kütüphaneler:
+
+streamlit
+transformers
+easyocr
+Pillow
+numpy
+torch
