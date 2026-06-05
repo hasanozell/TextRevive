@@ -51,18 +51,24 @@ if uploaded_file is not None:
         img_array = np.array(image)
         ocr_results = reader.readtext(img_array)
         
-        
         ocr_results.sort(key=lambda r: (int(r[0][0][1]/15), r[0][0][0]))
         
         olusturulan_metin = []
         for (bbox, text, prob) in ocr_results:
             
-            if prob < 0.50 or re.search(r'[^a-zA-ZğüşıöçĞÜŞİÖÇ\s.,\'\-]', text):
+          
+            if '*' in text:
+                text = re.sub(r'\*+', ' [MASK] ', text)
+                
+            
+            if prob < 0.50 or re.search(r'[^a-zA-ZğüşıöçĞÜŞİÖÇ\s.,\'\-*\[\]]', text):
                 olusturulan_metin.append("[MASK]")
             else:
-                olusturulan_metin.append(text)
+                olusturulan_metin.append(text.strip())
         
         input_text = " ".join(olusturulan_metin)
+        
+        input_text = re.sub(r'\s+', ' ', input_text).strip()
         st.warning(f"**OCR Tarafından Tespit Edilen Hasarlı Metin:** {input_text}")
 
 final_input = st.text_area("Düzenlenecek Metin (Manuel olarak [MASK] ekleyebilirsiniz):", value=input_text, height=150)
